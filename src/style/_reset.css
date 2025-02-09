@@ -1,0 +1,32 @@
+:root {
+    font-size: 12pt;
+    font-family: 'Alef', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #e8e4db;
+}
+
+a {
+    color: #2a62cf;
+    text-decoration: none;
+
+    &:hover {
+        color: #133175;
+        text-decoration: underline;
+        text-underline-offset: 0.23em;
+        text-decoration-thickness: 2px;
+    }
+
+    &:focus {
+        background-color: #0f1c35;
+        color: #c5b028;
+        outline: none;
+    }
+}

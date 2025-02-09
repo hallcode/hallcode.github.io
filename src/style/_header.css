@@ -1,0 +1,69 @@
+.details {
+    display: flex;
+    margin: 3vmax auto;
+    max-width: 100%;
+    width: 820px;
+    align-items: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        z-index: -1;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%2348a3bf' d='M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 C1150,100 1350,0 1440,50 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+
+    h1 {
+        margin: 0;
+        color: #0f1c35;
+        font-size: 28pt;
+        text-shadow: 0 0 4px #e8e4db;
+    }
+
+    .subtitle {
+        color: #6d6d73;
+        font-size: 15pt;
+        line-height: 1.33em;
+    }
+
+    aside {
+        margin: 0 2vmax;
+    }
+
+    .profile-pic {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid #e5e5e5;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    ul {
+        display: flex;
+        margin: 0;
+        gap: 2.33ch;
+        padding: 0;
+
+        li {
+            position: relative;
+            list-style: none;
+            display: flex;
+            gap: 0.8ch;
+            align-items: center;
+
+            .icon {
+                position: relative;
+                top: -2px;
+                height: 1.2em;
+                width: 1.2em;
+            }
+        }
+    }
+}
