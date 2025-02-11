@@ -1,9 +1,11 @@
 .details {
     display: flex;
-    margin: 3vmax auto;
+    margin: 0 auto 5vmax auto;
+    padding-top: 2vmax;
     max-width: 100%;
     width: 820px;
     align-items: center;
+    border-top: 5px solid #0f1c35;
 
     &::before {
         content: '';
@@ -11,23 +13,23 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 120px;
+        height: 150px;
         z-index: -1;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%2348a3bf' d='M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 C1150,100 1350,0 1440,50 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
+        /*clip-path: polygon(100% 0, 100% 50%, 0 100%, 0 0);*/
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 85% 79%, 71% 79%, 55% 76%, 37% 69%, 11% 83%, 0 100%);
+        background: linear-gradient(180deg, #2a62cf, #48a3bf);
     }
 
     h1 {
         margin: 0;
         color: #0f1c35;
         font-size: 28pt;
-        text-shadow: 0 0 4px #e8e4db;
+        font-weight: bold;
     }
 
     .subtitle {
-        color: #6d6d73;
+        color: #333335;
+        display: inline;
         font-size: 15pt;
         line-height: 1.33em;
     }
@@ -38,7 +40,8 @@
 
     .profile-pic {
         width: 180px;
-        height: 180px;
+        max-width: 20vw;
+        height: 100%;
         object-fit: cover;
         border-radius: 50%;
         border: 2px solid #e5e5e5;
@@ -47,7 +50,7 @@
 
     ul {
         display: flex;
-        margin: 0;
+        margin: 1vmax 0;
         gap: 2.33ch;
         padding: 0;
 
@@ -65,5 +68,54 @@
                 width: 1.2em;
             }
         }
+
+        &.skill-tags {
+            gap: 1ch;
+            margin: 1.5vmax 0;
+            flex-wrap: wrap;
+            .tag {
+                font-size: .89em;
+                background-color: #9ee1b1;
+                padding: .2em .4em;
+                border-radius: 0.8ch;
+                border: 1px solid rgba(0, 0, 0, 0.3);
+                user-select: none;
+                transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+                position: relative;
+                overflow: hidden;
+                color: rgb(0 0 0 / 0.78);
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
+                    background-size: 300% 100%;
+                    opacity: 0;
+                    transition: opacity 0.5s ease-in-out;
+                    z-index: -1;
+                }
+
+                &:hover::after {
+                    opacity: 1;
+                    animation: rainbowScroll 3s linear infinite;
+                }
+
+                &:hover {
+                    box-shadow: 0 0 20px yellow;
+                    background-color: rgba(255 255 255 / 0.35);
+                    color: #000;
+                    text-shadow: #fff 0 0 3px;
+                }
+            }
+
+        }
     }
+}
+
+/* Keyframes for scrolling gradient */
+@keyframes rainbowScroll {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 150% 50%; }
+
 }

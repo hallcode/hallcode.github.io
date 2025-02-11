@@ -1,16 +1,19 @@
 :root {
     font-size: 12pt;
-    font-family: 'Alef', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 * {
     box-sizing: border-box;
+    font-family: inherit;
 }
 
 body {
     padding: 0;
     margin: 0;
     background-color: #e8e4db;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 a {
@@ -26,7 +29,7 @@ a {
 
     &:focus {
         background-color: #0f1c35;
-        color: #c5b028;
+        color: #f6d81a;
         outline: none;
     }
 }
